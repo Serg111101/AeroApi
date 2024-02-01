@@ -1,10 +1,11 @@
-import Joi from 'joi';
+import Joi, { link } from 'joi';
 import { ID } from './type';
 
 const HeaderSchema = {
   headerSchema: {
     body: Joi.object({
-      title: Joi.string().min(2).required()
+      title: Joi.string().min(2).required(),
+      link:Joi.string(),
     })
   },
 
@@ -20,7 +21,9 @@ const HeaderSchema = {
       lang:Joi.string().valid('AM', 'US', 'RU').required(),
     }),
     body: Joi.object({
-      title: Joi.string().min(2).required()
+      title: Joi.string().min(2).required(),
+      link:Joi.string(),
+
 
     })
 

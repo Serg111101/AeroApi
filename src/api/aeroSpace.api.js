@@ -143,7 +143,7 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 router.put(
   "/editHeader/:lang/:id",
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
-  HeaderValidationMiddleware.validateEditArgs,
+  // HeaderValidationMiddleware.validateEditArgs,
   AeroSpaceController.editHeader
 );
 // router.delete('/deleteHeader/:lang/:id', /*HeaderValidationMiddleware.validateDelByIdArgs,*/
@@ -234,7 +234,7 @@ router.post(
   "/addNewQuestion/:lang",
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
-  QuizValidationMiddleware.validateAddArgs,
+  // QuizValidationMiddleware.validateAddArgs,
   AeroSpaceController.addNewQuestion
 );
 

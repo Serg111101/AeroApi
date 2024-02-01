@@ -71,7 +71,7 @@ class App {
 
       // })
       cors({
-        origin: process.env.CORS ,
+        origin: process.env.CORS,
         methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE','OPTIONS'],
         allowedHeaders: ['Authorization', 'Content-Type', 'Origin','X-Requested-With','Accept'],
         credentials: true,

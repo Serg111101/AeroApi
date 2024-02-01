@@ -48,6 +48,12 @@ router.get('/getTest/:teacher_id/:children_id',
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 ChildrenController.getTest);
 
+router.put('/putTest/:teacher_id/:children_id',
+AuthMiddleware.authenticateFor(['superadmin','admin','children']),
+ChildrenController.putTest);
+
+
+
 router.get('/getclass/:teacher_id',
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 ChildrenController.getClass);

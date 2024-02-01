@@ -18,18 +18,22 @@ async function seed(pg) {
   await pg("header_en").insert([
     {
       title: "Main page",
+      link:"",
       created_at: new Date().toISOString(),
     },
     {
       title: "About us",
+      link:"",
       created_at: new Date().toISOString(),
     },
     {
       title: "Partners",
+      link:"https://www.youtube.com/",
       created_at: new Date().toISOString(),
     },
     {
       title: "Contact us",
+      link:"",
       created_at: new Date().toISOString(),
     },
     // {

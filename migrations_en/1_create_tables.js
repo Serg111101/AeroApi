@@ -10,6 +10,7 @@ function up(pg) {
   .createTable('header_en', (table) => {
     table.increments('id').primary();
     table.string('title').notNullable();    
+    table.string("link");
     table.dateTime('created_at');
     table.dateTime('updated_at');
 
@@ -93,6 +94,7 @@ function up(pg) {
     table.specificType('incorrectAnswer','text[]');
     table.string('lesson');
     table.text('correctAnswer');
+    table.boolean("unverified").defaultTo("false");
     table.string('background');
     table.specificType('button','text[]')
     table.dateTime('created_at');

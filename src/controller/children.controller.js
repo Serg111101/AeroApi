@@ -132,6 +132,16 @@ console.log('====================================');
       next(error);
     }
   }
+  static async putTest(req, res, next) {
+    try {
+      const { teacher_id, children_id } = req.params;
+      const {unverified} = req.body
+      const data = await ChildrenServices.putTest(teacher_id, children_id,unverified);
+      SuccessHandlerUtil.handleList(res, next, data);
+    } catch (error) {
+      next(error);
+    }
+  }
   static async addClass(req, res, next) {
     try {
       const {teacher_id} = req.params;

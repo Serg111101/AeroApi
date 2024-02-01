@@ -82,9 +82,6 @@ export default class AeroSpaceController {
     try {
       const { lesson, lang } = req.params;
       const result = await AeroSpaceService.getQuiz(lesson, lang);
-        console.log('====================================');
-        console.log(result,"rrrrrrrreeeeeeeeeeeeeeeeeeeeee");
-        console.log('====================================');
       SuccessHandlerUtil.handleList(res, next, result);
     } catch (error) {
       next(error);

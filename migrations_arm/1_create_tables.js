@@ -23,6 +23,7 @@ function up(pg) {
     .createTable('header', (table) => {
       table.increments('id').primary();
       table.string('title').notNullable();
+      table.string("link");
       table.dateTime('created_at');
       table.dateTime('updated_at');
     })
@@ -168,7 +169,8 @@ function up(pg) {
       table.string('lesson');
       table.specificType('correct', 'jsonb[]');
       table.specificType('incorrect', 'jsonb[]');
-      table.integer('teacher_id'); // Assuming this should be an integer
+      table.integer('teacher_id'); 
+      table.boolean("unverified").defaultTo("false");
       table.dateTime('created_at');
       table.dateTime('updated_at');
     })

@@ -62,8 +62,40 @@ class AeroSpaceService {
   }
 
   static async getQuiz(lesson, lang) {
-    return aeroSpaseQuiz.questions(lesson, lang);
+    const questions = await aeroSpaseQuiz.questions(lesson, lang);
+    const answerQuestion = [];
+    const writeQuestion = [];
+    
+    questions.forEach((el) => {
+      if (el.correctAnswer.length > 0 && el.incorrectAnswer.length > 0) {
+        answerQuestion.push(el);
+      } else {
+        writeQuestion.push(el);
+      }
+    });
+  
+    const randomAnswer = [];
+    const randomWrite = [];
+  
+    for (let i = 0; i < 10; i++) {
+      if (answerQuestion.length === 0) break;
+      const randomIndexAnswer = Math.floor(Math.random() * answerQuestion.length);
+      const randomItem = answerQuestion[randomIndexAnswer];
+      randomAnswer.push(randomItem);
+      answerQuestion.splice(randomIndexAnswer, 1);
+    }
+  
+    for (let i = 0; i < 2; i++) {
+      if (writeQuestion.length === 0) break; 
+      const randomIndexWrite = Math.floor(Math.random() * writeQuestion.length);
+      const randomItem2 = writeQuestion[randomIndexWrite];
+      randomWrite.push(randomItem2);
+      writeQuestion.splice(randomIndexWrite, 1);
+    }
+    const result = [...randomAnswer,...randomWrite]
+    return result
   }
+  
 
   static async getPartners(lang) {
     return AeroSpacePartnersModel.getPartners(lang);

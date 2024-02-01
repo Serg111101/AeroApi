@@ -251,6 +251,22 @@ console.log('====================================');
       console.log(error);
     }
   }
+
+  static async putTest(teacher_id, children_id,unverified) {
+    console.log(unverified,teacher_id,children_id);
+    try {
+      const result = await pg('quiz')
+        .update({unverified})
+        .where('teacher_id', '=', teacher_id)
+        .andWhere('children_id', '=', children_id)
+        .returning("*");
+        console.log(result,"rrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   static async addClass(teacher_id, name) {
     try {
       const result = await pg('class')

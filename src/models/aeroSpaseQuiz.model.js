@@ -12,25 +12,28 @@ class aeroSpaseQuiz {
         case "AM":
           query = pg("questions")
             .select("*")
-            .orderByRaw("random()")
             .where("lesson", "=", lesson)
-            .limit(10)
+            
+
+            // .orderByRaw("random()")
+            // .limit(10)
             .returning("*");
+            
           break;
         case "US":
           query = pg("questions_en")
             .select("*")
-            .orderByRaw("random()")
             .where("lesson", "=", lesson)
-            .limit(10)
+            // .orderByRaw("random()")
+            // .limit(10)
             .returning("*");
           break;
         case "RU":
           query = pg("questions_ru")
             .select("*")
-            .orderByRaw("random()")
             .where("lesson", "=", lesson)
-            .limit(10)
+            // .orderByRaw("random()")
+            // .limit(10)
             .returning("*");
           break;
         default:
