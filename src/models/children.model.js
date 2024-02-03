@@ -238,7 +238,8 @@ class ChildrenModel extends Model {
       const result = await pg('quiz')
         .select('*')
         .where('teacher_id', '=', teacher_id)
-        .andWhere('children_id', '=', children_id);
+        .andWhere('children_id', '=', children_id)
+        .orderBy("id")
       return result;
     } catch (error) {
       console.log(error);
