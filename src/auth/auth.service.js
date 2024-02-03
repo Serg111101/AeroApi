@@ -60,7 +60,6 @@ export default class AuthService {
 
   static async login(email, password) {
     const user = await adminModel.getLogin(email);
-    console.log(user,"user");
     if (!user) throw new InputValidationError('Invalid email or password');
     if (!CryptoUtil.isValidPassword(password, user.password)) {
       throw new InputValidationError('Invalid email or password');

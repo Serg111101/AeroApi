@@ -94,7 +94,7 @@ function up(pg) {
     table.specificType('incorrectAnswer','text[]');
     table.string('lesson');
     table.text('correctAnswer');
-    table.boolean("unverified").defaultTo("false");
+    // table.boolean("unverified").defaultTo("false");
     table.string('background');
     table.specificType('button','text[]')
     table.dateTime('created_at');

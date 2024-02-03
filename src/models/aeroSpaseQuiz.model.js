@@ -13,8 +13,6 @@ class aeroSpaseQuiz {
           query = pg("questions")
             .select("*")
             .where("lesson", "=", lesson)
-            
-
             // .orderByRaw("random()")
             // .limit(10)
             .returning("*");

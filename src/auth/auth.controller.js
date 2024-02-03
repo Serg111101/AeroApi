@@ -5,10 +5,8 @@ export default class AuthController {
   static async login(req, res, next) {
     try {
       const { login, password } = req.body;
-      console.log(login, password,"ttttttttttttt");
 
       const loginResult = await AuthService.login(login, password);
-      console.log(loginResult,"lollolololollo");
       SuccessHandlerUtil.handleAdd(res, next, loginResult);
     } catch (error) {
       next(error);

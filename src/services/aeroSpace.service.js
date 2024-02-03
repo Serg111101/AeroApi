@@ -216,7 +216,6 @@ class AeroSpaceService {
   }
 
   static async addSatellite(info, lang) {
-    console.log(info, lang);
     return AeroSpaceSatelliteModel.addSatellite(info, lang);
   }
   static async editSatellite(info, id, lang,index) {

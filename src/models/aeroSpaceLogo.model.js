@@ -149,7 +149,6 @@ class AeroSpaceLogoModel {
           .update({ information: resultat.information })
           .where("different", "=", different)
           .returning("*");
-        console.log(result[0].information);
       } else {
         result = await pg(tableName)
           .update({

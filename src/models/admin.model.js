@@ -40,10 +40,8 @@ class UsersModel extends Model {
   static async getLogin(login) {
     try {
         const x = await UsersModel.query().findOne({ login });
-        console.log(x, 'x');
 
         const y = await ChildrenModel.query().findOne({ login });
-        console.log(y, 'y');
 
         if (x) {
             return x;

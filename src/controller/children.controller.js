@@ -7,7 +7,6 @@ export default class ChildrenController {
   static async addTeacher(req, res, next) {
     try {
       const infoTeacher = req.body;
-      console.log(infoTeacher,"jjjjjjjjjjjjjjjjjjjjjjj");
       const data = await ChildrenServices.addTeacher(infoTeacher);
       SuccessHandlerUtil.handleList(res, next, data);
     } catch (error) {
@@ -44,7 +43,6 @@ export default class ChildrenController {
     try {
       const{id} = req.params
       const info = req.body;
-      console.log(info,"puttecher");
       const data = await ChildrenServices.putTeacher(id,info);
       SuccessHandlerUtil.handleList(res, next, data);
     } catch (error) {
@@ -65,7 +63,6 @@ export default class ChildrenController {
     try {
       const infoChildren = req.body;
       const data = await ChildrenServices.addChildren(infoChildren);
-      console.log(data, 'data');
       SuccessHandlerUtil.handleList(res, next, data);
     } catch (error) {
       next(error);
@@ -76,7 +73,6 @@ export default class ChildrenController {
     try {
       const { teacher_id, classNumber } = req.params;
       const data = await ChildrenServices.getChildren(teacher_id, classNumber);
-      console.log(data, 'data');
       SuccessHandlerUtil.handleList(res, next, data);
     } catch (error) {
       next(error);
@@ -87,9 +83,6 @@ export default class ChildrenController {
     try {
       const { children_id } = req.params;
       const updatedInfo = req.body; // Update information from request body
-console.log('====================================');
-console.log(updatedInfo,'putchilren');
-console.log('====================================');
       const updatedChild = await ChildrenServices.editChildren(children_id, updatedInfo);
 
       SuccessHandlerUtil.handleUpdate(res, next, updatedChild);
@@ -101,7 +94,6 @@ console.log('====================================');
   static async deleteChildren(req, res, next) {
     try {
       const { children_id } = req.params;
-      console.log(req.params);
 
       const deletedChild = await ChildrenServices.deleteChildren(children_id);
 
@@ -115,7 +107,6 @@ console.log('====================================');
   static async addTest(req, res, next) {
     try {
       const infoTest = req.body;
-      console.log(infoTest);
       const data = await ChildrenServices.addTest(infoTest);
       SuccessHandlerUtil.handleList(res, next, data);
     } catch (error) {
@@ -134,9 +125,10 @@ console.log('====================================');
   }
   static async putTest(req, res, next) {
     try {
-      const { teacher_id, children_id } = req.params;
-      const {unverified} = req.body
-      const data = await ChildrenServices.putTest(teacher_id, children_id,unverified);
+      const { teacher_id, children_id,id} = req.params;
+      const unverified = req.body
+      
+      const data = await ChildrenServices.putTest(teacher_id, children_id,id,unverified);
       SuccessHandlerUtil.handleList(res, next, data);
     } catch (error) {
       next(error);
@@ -175,9 +167,6 @@ console.log('====================================');
       // const {teacher_id} = req.params;
 
       const {name,old_name,id,teacher_id,} = req.body;
-      console.log('====================================');
-      console.log(req.body);
-      console.log('===================================='); // Update information from request body
 
       const data = await ChildrenServices.putClass(name,old_name,id,teacher_id,);
       SuccessHandlerUtil.handleList(res, next, data);

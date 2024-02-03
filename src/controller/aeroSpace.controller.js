@@ -18,9 +18,6 @@ export default class AeroSpaceController {
   static async getLectures(req, res, next) {
     try {
       const { lesson, lang } = req.params;
-      console.log('====================================');
-      console.log(lesson, lang );
-      console.log('====================================');
       const result = await AeroSpaceService.getLectures(lesson, lang);
       SuccessHandlerUtil.handleList(res, next, result);
     } catch (error) {

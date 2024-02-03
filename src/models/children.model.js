@@ -4,6 +4,7 @@ import knex from 'knex';
 import { ErrorsUtil, LoggerUtil } from '../utils';
 
 import knexConfigs from '../../knex.configs';
+import { stringify } from 'uuid';
 const pg = knex(knexConfigs.development);
 
 const { InputValidationError } = ErrorsUtil;
@@ -214,15 +215,7 @@ class ChildrenModel extends Model {
   // Test Models crud
   static async addTest(info) {
     const { incorrect, correct, ...rest } = info;
-console.log('====================================');
-console.log({
-  ...rest,
-  incorrect: [incorrect], // Assuming 'incorrect' is an array of objects
-  correct: [correct], // Assuming 'correct' is an array of objects
-  created_at: new Date(),
-  updated_at: new Date()
-},"555555555555555555555");
-console.log('====================================');
+
     try {
       const data = await pg('quiz').insert({
         ...rest,
@@ -252,19 +245,21 @@ console.log('====================================');
     }
   }
 
-  static async putTest(teacher_id, children_id,unverified) {
-    console.log(unverified,teacher_id,children_id);
+  static async putTest(teacher_id, children_id,id,unverified) {
     try {
       const result = await pg('quiz')
-        .update({unverified})
-        .where('teacher_id', '=', teacher_id)
-        .andWhere('children_id', '=', children_id)
-        .returning("*");
-        console.log(result,"rrrrrrrrrrrrrrrrrrrrrrrrrrrr");
+      .update(unverified)
+      .where('teacher_id', '=', teacher_id)
+      .andWhere('children_id', '=', children_id)
+      .andWhere('id', '=', id)
+        // .andWhereRaw('?? @> ?', ['incorrect', JSON.stringify(unverified)])
+        // .returning("*");
       return result;
     } catch (error) {
       console.log(error);
     }
+    // const a = await pg('quiz').select('*').where('incorrect', '=', {incorrect:'hello'})
+    // console.log(a);
   }
 
   static async addClass(teacher_id, name) {

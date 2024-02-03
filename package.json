@@ -5,7 +5,6 @@
   "scripts": {
     "start": "babel-node src/bin/www.js",
     "dev": "babel-watch src/bin/www.js",
-    "Սերոժիկ": "babel-watch src/bin/www.js",
     "migrate": "babel-node migrations_arm/1_create_tables.js",
     "migrate-en": "babel-node migrations_en/1_create_tables.js",
     "migrate-down": "babel-node migrations_arm/1_drop_tables.js",

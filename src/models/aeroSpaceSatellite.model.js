@@ -59,7 +59,6 @@ class AeroSpaceTopicsModel {
   }
 
   static async editSatellite(info, id, lang) {
-    console.log(info, id, lang,"EDITTTTTTTTT");
     info.updated_at = new Date();
     const key = Object.keys(info)[0];
     const values = Object.values(info)[0];

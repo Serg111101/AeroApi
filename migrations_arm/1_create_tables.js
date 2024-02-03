@@ -170,7 +170,7 @@ function up(pg) {
       table.specificType('correct', 'jsonb[]');
       table.specificType('incorrect', 'jsonb[]');
       table.integer('teacher_id'); 
-      table.boolean("unverified").defaultTo("false");
+      // table.boolean("unverified").defaultTo("false");
       table.dateTime('created_at');
       table.dateTime('updated_at');
     })

@@ -66,8 +66,8 @@ export default class ChildrenServices {
     return ChildrenModel.getTest(teacher_id, children_id);
   }
 
-  static async putTest(teacher_id, children_id,unverified) {
-    return ChildrenModel.putTest(teacher_id, children_id,unverified);
+  static async putTest(teacher_id, children_id,id,unverified) {
+    return ChildrenModel.putTest(teacher_id, children_id,id,unverified);
   }
 
   static async addClass(teacher_id,name) {
