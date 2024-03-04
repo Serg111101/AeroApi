@@ -153,7 +153,7 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 // upload image,video,gif
 router.post(
   "/addPicture",
-AuthMiddleware.authenticateFor(['superadmin','admin','children']),
+// AuthMiddleware.authenticateFor(['superadmin','admin','children']),
   ImageUploadMiddleware.upload(),
   AeroSpaceController.addPicture
 );

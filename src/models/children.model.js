@@ -170,7 +170,7 @@ class ChildrenModel extends Model {
           position: info.position || '',
           fullName:info.fullName,
           school:info.school,
-          cubesat_link:info.cubesat_link,
+          links:[],
           created_at: new Date()
         })
         .returning('*');

@@ -16,7 +16,7 @@ function up(pg) {
       table.string('info');
       table.string('position');
       table.string("school");
-      table.specificType("cubesat_link", 'text[]');
+      table.specificType("links", 'jsonb[]');
       table.dateTime('updated_at');
       table.dateTime('created_at');
     })
