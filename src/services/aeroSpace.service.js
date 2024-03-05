@@ -219,6 +219,7 @@ class AeroSpaceService {
     return AeroSpaceSatelliteModel.addSatellite(info, lang);
   }
   static async editSatellite(info, id, lang,index) {
+   
     return AeroSpaceSatelliteModel.editSatellite(info, id, lang,index);
   }
   static async deleteSatellite(lang, key,index,id) {
