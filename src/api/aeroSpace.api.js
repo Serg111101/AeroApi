@@ -362,6 +362,46 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
   AeroSpaceController.addSatelliteQuestion
 );
+router.post(
+  "/addLinksAdmin/:lang",
+  // SatelliteQuizValidationMiddleware.validateAddArgs,
+AuthMiddleware.authenticateFor(['superadmin']),
+
+  AeroSpaceController.addLinksAdmin
+);
+router.get(
+  "/getLinksAdmin/:lang",
+  // SatelliteQuizValidationMiddleware.validateAddArgs,
+AuthMiddleware.authenticateFor(['superadmin']),
+
+  AeroSpaceController.getLinksAdmin
+);
+
+
+
+router.put(
+  "/editLinksAdmin/:lang/:id",
+  // SatelliteQuizValidationMiddleware.validateAddArgs,
+AuthMiddleware.authenticateFor(['superadmin']),
+
+  AeroSpaceController.editLinksAdmin
+);
+
+
+
+
+router.delete(
+  "/deleteLinksAdmin/:lang/:id",
+  // SatelliteQuizValidationMiddleware.validateAddArgs,
+AuthMiddleware.authenticateFor(['superadmin']),
+
+  AeroSpaceController.deleteLinksAdmin
+);
+
+
+
+
+
 
 router.put(
   "/editSatelliteQuestion/:lang/:id",

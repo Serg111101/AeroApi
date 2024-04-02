@@ -45,10 +45,8 @@ class ChildrenModel extends Model {
 
   // Methods
   static async addChildren(info, password) {
-    console.log(info, 'lllllllllllllllllllllllllllllllllllll');
 
     const admin = await pg('admin').where('id', '=', info.teacher_id);
-    // console.log(admin[0].cubesat_link, 'kkkkkkkkkkkkkkkkkkkkkkk');
     let payload = {
       fullName:info.fullName,
       bookNumber:info.bookNumber,
@@ -72,7 +70,6 @@ class ChildrenModel extends Model {
   }
 
   static async getAllChildren(teacher_id, classNumber) {
-    // console.log(teacher_id, classNumber,"jkhgfds");
     try {
       const data = ChildrenModel.query().select('*')
         .where('teacher_id', '=', teacher_id)
@@ -128,7 +125,6 @@ class ChildrenModel extends Model {
     try {
       // Check if there are dependencies in the "quiz" table
       const dependentQuiz = await pg('quiz').where('children_id', '=', childId).del();
-      console.log(dependentQuiz,'ffff');
   
       // if (dependentQuiz > 0) {
       //   // Instead of throwing a generic error, send a more informative response
@@ -192,12 +188,8 @@ class ChildrenModel extends Model {
   }
   
   static async putTeacher(id,info,password) {
-    console.log('====================================');
-    console.log(info,"info00");
-    console.log(password,"password000");
-    console.log('====================================');
     try {
-      if(password != undefined){
+      if(password !== undefined){
         info.password = password
 
       }

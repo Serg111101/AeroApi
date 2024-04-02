@@ -473,6 +473,53 @@ export default class AeroSpaceController {
       next(error);
     }
   }
+  static async addLinksAdmin(req, res, next) {
+    try {
+      const { lang } = req.params;
+      const  info  = req.body; 
+      const result = await AeroSpaceService.addLinksAdmin(lang,info);
+      SuccessHandlerUtil.handleList(res, next, result);
+    } catch (error) {
+      next(error);
+    }
+  }
+  static async getLinksAdmin(req, res, next) {
+    try {
+      const { lang } = req.params;
+      const  info  = req.body; 
+      const result = await AeroSpaceService.getLinksAdmin(lang,info);
+      SuccessHandlerUtil.handleList(res, next, result);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async editLinksAdmin(req, res, next) {
+    try {
+      const { lang,id } = req.params;
+      const  info  = req.body;
+
+      const result = await AeroSpaceService.editLinksAdmin(lang,id,info);
+      SuccessHandlerUtil.handleList(res, next, result);
+    } catch (error) {
+      next(error);
+    }
+  }
+  static async deleteLinksAdmin(req, res, next) {
+    try {
+      const {id ,lang} = req.params;
+      
+
+      const result = await AeroSpaceService.deleteLinksAdmin(id,lang);
+      SuccessHandlerUtil.handleList(res, next, result);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+
+
+
   static async editSatelliteQuestion(req, res, next) {
     try {
       const { lang, id } = req.params;

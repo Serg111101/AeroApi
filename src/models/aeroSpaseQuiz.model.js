@@ -74,7 +74,6 @@ class aeroSpaseQuiz {
     }
   }
   static async editExistQuestion(info, id, lang) {
-    console.log(info);
     info.updated_at = new Date();
     try {
       let tableName;

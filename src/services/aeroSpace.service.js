@@ -228,6 +228,24 @@ class AeroSpaceService {
   static async addSatelliteQuestion(lang,info) {
     return aeroSpaceQuestionsModel.addSatelliteQuestion(lang,info);
   }
+  static async addLinksAdmin(lang,info) {
+    return aeroSpaceQuestionsModel.addLinksAdmin(lang,info);
+  }
+  static async getLinksAdmin(lang,info) {
+    return aeroSpaceQuestionsModel.getLinksAdmin(lang,info);
+  }
+
+  static async editLinksAdmin(lang,id,info) {
+ 
+    return aeroSpaceQuestionsModel.editLinksAdmin(lang,id,info);
+  }
+  
+  static async deleteLinksAdmin(id,lang) {
+
+    return aeroSpaceQuestionsModel.deleteLinksAdmin(id,lang);
+  }
+
+
   static async editSatelliteQuestion(lang,id,info) {
     return aeroSpaceQuestionsModel.editSatelliteQuestion(lang,id,info);
   }

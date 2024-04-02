@@ -40,6 +40,76 @@ class aeroSpaceQuestionsModel {
       LoggerUtil.error(error.message);
     }
   }
+  static async addLinksAdmin(lang, info) {
+
+ 
+
+    try {
+      return lang === "AM"
+        ? pg("links_superAdmin").insert(info).returning("*")
+        : lang === "US"
+        ? pg("links_superAdmin_en").insert(info).returning("*")
+        : lang === "RU"
+        ? pg("links_superAdmin_ru").insert(info).returning("*")
+        : null;
+    } catch (error) {
+      console.log(error);
+      LoggerUtil.error(error.message);
+    }
+  }
+  static async getLinksAdmin(lang, info) {
+    try {
+      return lang === "AM"
+        ? pg("links_superAdmin").select('*').returning("*")
+        : lang === "US"
+        ? pg("links_superAdmin_en").select('*').returning("*")
+        : lang === "RU"
+        ? pg("links_superAdmin_ru").select('*').returning("*")
+        : null;
+    } catch (error) {
+      console.log(error);
+      LoggerUtil.error(error.message);
+    }
+  }
+
+
+  static async editLinksAdmin(lang,id, info) {
+
+    try {
+      return lang === "AM"
+        ? pg("links_superAdmin").update(info).where('id','=',id).returning("*")
+        : lang === "US"
+        ? pg("links_superAdmin_en").update(info).where('id','=',id).returning("*")
+        : lang === "RU"
+        ? pg("links_superAdmin_ru").update(info).where('id','=',id).returning("*")
+        : null;
+    } catch (error) {
+      console.log(error);
+      LoggerUtil.error(error.message);
+    }
+  }
+  static async deleteLinksAdmin(id,lang) {
+
+    try {
+      return lang === "AM"
+        ?  pg("links_superAdmin").del().where('id','=',id).returning('*')
+        : lang === "US"
+        ? pg("links_superAdmin_en").del().where('id','=',id).returning('*')
+        : lang === "RU"
+        ? pg("links_superAdmin_ru").del().where('id','=',id).returning('*')
+        : null;
+    } catch (error) {
+      console.log(error);
+      LoggerUtil.error(error.message);
+    }
+  }
+
+
+
+
+
+
+
   static async editSatelliteQuestion(lang, id, info) {
     info.updated_at = new Date();
 

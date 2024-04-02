@@ -25,9 +25,11 @@ export default class ChildrenServices {
       delete info.password;
       const x = await ChildrenModel.putTeacher(id,info, password);
       return x
+    }else{
+      
+      const x = await ChildrenModel.putTeacher(id,info,info.password);
+      return x
     }
-    const x = await ChildrenModel.putTeacher(id,info,info.password);
-    return x
 
   }
 

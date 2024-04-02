@@ -21,6 +21,7 @@ function down(pg) {
     .dropTableIfExists('satelite_en')
     .dropTableIfExists('satellite_questions_en')
     .dropTableIfExists('questions_en')
+    .dropTableIfExists('links_superAdmin_en')
 
 
 

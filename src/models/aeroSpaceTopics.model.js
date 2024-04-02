@@ -10,7 +10,7 @@ class AeroSpaceTopicsModel {
 
 
     static async gettopics(lesson, lang) {
-      console.log(lesson);
+      
         try {   
           const result = lang == 'AM'
           ? await pg('topics').select('*').where('lesson','=',lesson).orderBy('id')

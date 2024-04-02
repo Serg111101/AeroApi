@@ -27,6 +27,14 @@ function up(pg) {
       table.dateTime('created_at');
       table.dateTime('updated_at');
     })
+    .createTable('links_superAdmin', (table) => {
+      table.increments('id').primary();
+      table.string('cameraLinks');
+      table.string("spaceLinks");
+      table.string('image');
+      table.dateTime('created_at');
+      table.dateTime('updated_at');
+    })
     .createTable('home_page', (table) => {
       table.increments('id').primary();
       table.string('different');
