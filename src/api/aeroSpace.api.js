@@ -242,7 +242,7 @@ router.put(
   "/editExistQuestion/:lang/:id",
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
-  QuizValidationMiddleware.validateEditArgs,
+  // QuizValidationMiddleware.validateEditArgs,
   AeroSpaceController.editExistQuestion
 );
 
@@ -405,7 +405,7 @@ AuthMiddleware.authenticateFor(['superadmin']),
 
 router.put(
   "/editSatelliteQuestion/:lang/:id",
-  SatelliteQuizValidationMiddleware.validateEditArgs,
+  // SatelliteQuizValidationMiddleware.validateEditArgs,
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
   AeroSpaceController.editSatelliteQuestion
