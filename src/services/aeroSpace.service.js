@@ -96,6 +96,10 @@ class AeroSpaceService {
     return result
   }
   
+  static async getQuizSuperadmin(lesson, lang) {
+    return await aeroSpaseQuiz.questions(lesson, lang);
+  }
+  
 
   static async getPartners(lang) {
     return AeroSpacePartnersModel.getPartners(lang);

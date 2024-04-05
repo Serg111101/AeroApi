@@ -15,6 +15,7 @@ class aeroSpaseQuiz {
             .where("lesson", "=", lesson)
             // .orderByRaw("random()")
             // .limit(10)
+            .orderBy("id")
             .returning("*");
             
           break;
@@ -24,6 +25,7 @@ class aeroSpaseQuiz {
             .where("lesson", "=", lesson)
             // .orderByRaw("random()")
             // .limit(10)
+            .orderBy("id")
             .returning("*");
           break;
         case "RU":
@@ -32,6 +34,7 @@ class aeroSpaseQuiz {
             .where("lesson", "=", lesson)
             // .orderByRaw("random()")
             // .limit(10)
+            .orderBy("id")
             .returning("*");
           break;
         default:
@@ -64,7 +67,7 @@ class aeroSpaseQuiz {
       }
 
       if (tableName) {
-        return pg(tableName).insert(info).returning("*");
+        return pg(tableName).insert(info).orderBy("id").returning("*");
       } else {
         return null;
       }
@@ -92,7 +95,7 @@ class aeroSpaseQuiz {
       }
 
       if (tableName) {
-        return pg(tableName).update(info).where("id", "=", id).returning("*");
+        return pg(tableName).update(info).where("id", "=", id).orderBy("id").returning("*");
       } else {
         return null;
       }
@@ -119,7 +122,7 @@ class aeroSpaseQuiz {
       }
 
       if (tableName) {
-        return pg(tableName).del().where("id", "=", id).returning("*");
+        return pg(tableName).del().where("id", "=", id).orderBy("id").returning("*");
       } else {
         return null;
       }

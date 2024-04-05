@@ -78,7 +78,10 @@ export default class AeroSpaceController {
   static async getQuiz(req, res, next) {
     try {
       const { lesson, lang } = req.params;
-      const result = await AeroSpaceService.getQuiz(lesson, lang);
+
+      const result = await AeroSpaceService.getQuizSuperadmin(lesson, lang);
+
+
       SuccessHandlerUtil.handleList(res, next, result);
     } catch (error) {
       next(error);

@@ -76,6 +76,15 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
   AeroSpaceController.getQuiz
 ); // completed
 
+
+router.get(
+  "/getQuizSuperadmin/:lesson/:lang",
+  QuizValidationMiddleware.validateGetArgs,
+AuthMiddleware.authenticateFor(['superadmin','admin','children']),
+
+  AeroSpaceController.getQuiz
+); // completed
+
 router.get(
   "/getOurTeam/:lang",
   OurTeamValidationMiddleware.validateGetArgs,
