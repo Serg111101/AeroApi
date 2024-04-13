@@ -36,8 +36,8 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 ); // completed
 
 router.get(
-  "/topics/:lesson/:lang",
-  TopicValidationMiddleware.validateGetArgs,
+  "/topics/:unique_key/:lang",
+  // TopicValidationMiddleware.validateGetArgs,
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
   AeroSpaceController.topics
@@ -52,7 +52,7 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 ); // completed
 
 router.get(
-  "/getLectures/:lesson/:lang",
+  "/getLectures/:unique_key/:lang",
 
   // LessonValidationMiddleware.validateGetArgs,
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
@@ -69,8 +69,8 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 ); // completed
 
 router.get(
-  "/getQuiz/:lesson/:lang",
-  QuizValidationMiddleware.validateGetArgs,
+  "/getQuiz/:unique_key/:lang",
+  // QuizValidationMiddleware.validateGetArgs,
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
   AeroSpaceController.getQuiz
@@ -78,8 +78,8 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
 
 router.get(
-  "/getQuizSuperadmin/:lesson/:lang",
-  QuizValidationMiddleware.validateGetArgs,
+  "/getQuizSuperadmin/:unique_key/:lang",
+  // QuizValidationMiddleware.validateGetArgs,
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
   AeroSpaceController.getQuiz
@@ -273,7 +273,7 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 );
 
 router.put(
-  "/editExistLesson/:lang/:id",
+  "/editExistLesson/:lang/:unique_key",
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
   // LessonValidationMiddleware.validateEditArgs,
@@ -281,10 +281,10 @@ AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 );
 
 router.delete(
-  "/deleteExistLesson/:lang/:id/:lesson",
+  "/deleteExistLesson/:lang/:id/:unique_key",
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
-  LessonValidationMiddleware.validateDelByIdArgs,
+  // LessonValidationMiddleware.validateDelByIdArgs,
   AeroSpaceController.deleteExistLesson
 );
 
@@ -293,7 +293,7 @@ router.post(
   "/addNewTopics/:lang",
 AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 
-  TopicValidationMiddleware.validateAddArgs,
+  // TopicValidationMiddleware.validateAddArgs,
   AeroSpaceController.addNewTopics
 );
 

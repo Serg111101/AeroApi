@@ -17,8 +17,8 @@ export default class AeroSpaceController {
 
   static async getLectures(req, res, next) {
     try {
-      const { lesson, lang } = req.params;
-      const result = await AeroSpaceService.getLectures(lesson, lang);
+      const { unique_key, lang } = req.params;
+      const result = await AeroSpaceService.getLectures(unique_key, lang);
       SuccessHandlerUtil.handleList(res, next, result);
     } catch (error) {
       next(error);
@@ -67,8 +67,8 @@ export default class AeroSpaceController {
 
   static async topics(req, res, next) {
     try {
-      const { lesson, lang } = req.params;
-      const gettopics = await AeroSpaceService.gettopics(lesson, lang);
+      const { unique_key, lang } = req.params;
+      const gettopics = await AeroSpaceService.gettopics(unique_key, lang);
       SuccessHandlerUtil.handleList(res, next, gettopics);
     } catch (error) {
       next(error);
@@ -77,9 +77,9 @@ export default class AeroSpaceController {
 
   static async getQuiz(req, res, next) {
     try {
-      const { lesson, lang } = req.params;
+      const { unique_key, lang } = req.params;
 
-      const result = await AeroSpaceService.getQuizSuperadmin(lesson, lang);
+      const result = await AeroSpaceService.getQuizSuperadmin(unique_key, lang);
 
 
       SuccessHandlerUtil.handleList(res, next, result);
@@ -232,8 +232,8 @@ export default class AeroSpaceController {
   static async editExistLesson(req, res, next) {
     try {
       const info = req.body;
-      const { id, lang } = req.params;
-      const result = await AeroSpaceService.editExistLesson(id, info, lang);
+      const { unique_key, lang } = req.params;
+      const result = await AeroSpaceService.editExistLesson(unique_key, info, lang);
       SuccessHandlerUtil.handleList(res, next, result);
     } catch (error) {
       next(error);
@@ -272,8 +272,8 @@ export default class AeroSpaceController {
   }
   static async deleteExistLesson(req, res, next) {
     try {
-      const { id ,lang,lesson} = req.params;
-      const result = await AeroSpaceService.deleteExistLesson(id,lang,lesson);
+      const { id ,lang,unique_key} = req.params;
+      const result = await AeroSpaceService.deleteExistLesson(id,lang,unique_key);
       SuccessHandlerUtil.handleList(res, next, result);
     } catch (error) {
       next(error);

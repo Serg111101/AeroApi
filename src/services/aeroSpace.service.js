@@ -96,8 +96,8 @@ class AeroSpaceService {
     return result
   }
   
-  static async getQuizSuperadmin(lesson, lang) {
-    return await aeroSpaseQuiz.questions(lesson, lang);
+  static async getQuizSuperadmin(unique_key, lang) {
+    return await aeroSpaseQuiz.questions(unique_key, lang);
   }
   
 
@@ -109,8 +109,8 @@ class AeroSpaceService {
     return AeroSpaceLessons.getSlides(lectures, lang);
   }
 
-  static async getLectures(lesson, lang) {
-    return AeroSpaceLessons.getLectures(lesson, lang);
+  static async getLectures(unique_key, lang) {
+    return AeroSpaceLessons.getLectures(unique_key, lang);
   }
 
   static async editBlok(lang,different, index, info, id) {
@@ -139,15 +139,15 @@ class AeroSpaceService {
     return AeroSpaceSatelliteModel.satellite(lang);
   }
   
-  static async editExistLesson(id, info,lang) {
-    return AeroSpaceLessons.editExistLesson(id, info,lang);
+  static async editExistLesson(unique_key, info, lang) {
+    return AeroSpaceLessons.editExistLesson(unique_key, info, lang);
   }
-  static async deleteExistLesson(id,lang,lesson) {
-    return AeroSpaceLessons.deleteExistLesson(id,lang,lesson);
+  static async deleteExistLesson(id,lang,unique_key) {
+    return AeroSpaceLessons.deleteExistLesson(id,lang,unique_key);
   }
 
-  static async gettopics(lesson, lang) {
-    return AeroSpaceTopicsModel.gettopics(lesson, lang);
+  static async gettopics(unique_key, lang) {
+    return AeroSpaceTopicsModel.gettopics(unique_key, lang);
   }
 
   static async addNewTopics(info, lang) {

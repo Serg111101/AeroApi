@@ -264,18 +264,7 @@ await pg("our_team_en").insert([
     text: "Microwave engineer",
     created_at: new Date().toISOString(),
   },
-  {
-    name: "Zohrab Mirzoyan",
-    image: `${URL_IMAGES}/IMAGE2023-05-30154806.jpg`,
-    text: "3D animator",
-    created_at: new Date().toISOString(),
-  },
-  {
-    name: "Vazgen Mamyan",
-    image: `${URL_IMAGES}/IMAGE2023-05-31140824.jpg`,
-    text: "Marketer",
-    created_at: new Date().toISOString(),
-  },
+
 ]);
 // A B O U T
 
@@ -324,24 +313,7 @@ await pg("footer_en").insert([
     text:"https://www.facebook.com/arenmehrabyanfoundation1/",
     created_at: new Date().toISOString(),
   },
-  {
-    title: "twitter",
-    logo: `${URL_IMAGES}/twitter.png`,
-    text:"https://twitter.com/",
-    created_at: new Date().toISOString(),
-  },
-  {
-    title: "instagram",
-    logo: `${URL_IMAGES}/instagram.png`,
-    text:"https://www.instagram.com/",
-    created_at: new Date().toISOString(),
-  },
-  {
-    title: "linkdn",
-    logo: `${URL_IMAGES}/linkediN.png`,
-    text:"https://www.linkedin.com/",
-    created_at: new Date().toISOString(),
-  },
+  
 ]);
 
 // L E S S O N S
@@ -353,6 +325,7 @@ await pg("lessons_en").insert([
     lesson: "Lesson 1. Introduction to Space Exploration",
     color: "#adcce9",
     button:"Go back",
+    unique_key: "1",
     lectures: JSON.stringify([
       {
         color: "#adcce9",
@@ -384,6 +357,7 @@ await pg("lessons_en").insert([
     lesson: "Lesson 2. Our Solar System and Beyond",
     color: "#adcce9",
     button:"Go back",
+    unique_key: "2",
     lectures: JSON.stringify([
       {
         color: "#adcce9",
@@ -414,6 +388,7 @@ await pg("lessons_en").insert([
     background: `${URL_IMAGES}/giphy.gif`,
     lesson: "Lesson 3. Rockets and Propulsion Systems",
     color: "#adcce9",
+    unique_key: "3",
     // lectures:["Հրթիռային շարժման սկզբունքները","Հրթիռային շարժիչների տեսակները և դրանց կիրառությունները","Հրթիռների նախագծում և օպտիմալացում","Հրթիռային տեխնոլոգիայի ապագա զարգացումները","Հարցաշար"],
     button:"Go back",
     lectures: JSON.stringify([
@@ -448,6 +423,7 @@ await pg("lessons_en").insert([
     color: "#adcce9",
     
     button:"Go back",// lectures:["Տիեզերանավերի տեսակները և դրանց գործառույթները","Ուղեծրային մեխանիկա և հետագծի հաշվարկներ","Միջմոլորակային առաքելություններ և տիեզերական զոնդեր","Առաքելության ուսումնասիրություն. Մարսագնացները և նրանց գիտական բացահայտումները","Հարցաշար"],
+    unique_key: "4",
     lectures: JSON.stringify([
       {
         color: "#adcce9",
@@ -612,6 +588,7 @@ await pg("lessons_en").insert([
         text1: `Provide a comprehensive historical overview of significant milestones in space exploration, from
         the first satellite to the moon landing and beyond.`,
         image: `${URL_IMAGES}/lesson1_1.jpg`,
+        unique_key: "1",
         text_arr: [`October 4, 1957: Sputnik 1 - The Soviet Union launches the first artificial satellite, Sputnik 1, into
         space. It marks the beginning of the Space Age and triggers the Space Race between the
         United States and the Soviet Union.`,
@@ -667,6 +644,7 @@ await pg("lessons_en").insert([
         lectures: `The Space Race and its impact`,
         text1: `Explore the Space Race between the United States and the Soviet Union and discuss its impact
         on space exploration.`,
+        unique_key: "1",
         image: `${URL_IMAGES}/lesson2_2.png`,
         text2: `The Space Race refers to the competition between the United States and the Soviet Union
         during the Cold War era to achieve significant milestones in space exploration. It had a profound
@@ -722,6 +700,7 @@ await pg("lessons_en").insert([
         Current trends and future prospects in space exploration are exciting and hold great potential for
         further advancements. Here are some key trends and prospects in the field:`,
         image: `${URL_IMAGES}/lesson3_3.jpg`,
+        unique_key: "1",
         text_arr_margin:[`1. Commercial Space Industry: One prominent trend is the rapid growth of the commercial
         space industry. Private companies like SpaceX, Blue Origin, and Virgin Galactic are
         making significant strides in developing reusable rockets, satellite deployment, and
@@ -769,6 +748,7 @@ await pg("lessons_en").insert([
         lectures: `Space agencies and their missions`,
         text1: `Introduce various space agencies around the world and their contributions to space exploration.`,
         image: `${URL_IMAGES}/lesson4_4.png`,
+        unique_key: "1",
         text2:`Several space agencies around the world are actively involved in space exploration and
         scientific missions. Here are some prominent space agencies and their notable missions:`,
         text_arr_margin:[`
@@ -824,6 +804,7 @@ await pg("lessons_en").insert([
     text1: `The fascinating features and characteristics of each planet in our solar system, along with their
     atmospheres, moons, and notable missions:`,
     image: `${URL_IMAGES}/img2_1.jpg`,
+    unique_key: "2",
     text_arr:[
       `● Mercury:
     - Features: Mercury is the closest planet to the Sun and has a rocky, heavily
@@ -942,6 +923,7 @@ await pg("lessons_en").insert([
     text1: `Dwarf planets, asteroids, and comets are three types of celestial objects that can be found in
     our solar system. While they share some similarities, they also have distinct characteristics that
     set them apart from one another.`,
+    unique_key: "2",
     image: `${URL_IMAGES}/Eng_img2_2.webp`,
     text_arr:[
     `● Dwarf Planets:
@@ -979,6 +961,7 @@ await pg("lessons_en").insert([
     The discovery and study of exoplanets have revolutionized our understanding of the universe
     and the potential for habitable worlds beyond our solar system. Here's some information about
     exoplanets and the search for habitable worlds:`,
+    unique_key: "2",
     text_arr:[
      `${URL_GIF}/gif2_12.gif`,
     `Detection of Exoplanets:`,
@@ -1024,6 +1007,7 @@ await pg("lessons_en").insert([
     lectures: `Recent discoveries and missions in our solar system`,
     text1: `There have been several notable discoveries and missions in our solar system in recent years.
     Here are some of the significant ones:`,
+    unique_key: "2",
     text_arr: [
     `1. Mars Perseverance Rover (2020):`,
     `NASA's Perseverance rover landed on Mars in February 2021. Its primary mission is to
@@ -1072,6 +1056,7 @@ await pg("lessons_en").insert([
     text1: `Provide an in-depth understanding of rocket propulsion principles, including Newton's
     laws of motion and the conservation of momentum.`,
     image: `${URL_IMAGES}/Eng_img3_1.png`,
+    unique_key: "3",
     text2:`Rocket propulsion is the principle by which rockets generate thrust to propel themselves through
     space. It relies on Newton's third law of motion, which states that for every action, there is an
     equal and opposite reaction. The basic principles of rocket propulsion are as follows:`,
@@ -1136,6 +1121,7 @@ await pg("lessons_en").insert([
     and their applications in space travel.
     There are several types of rocket engines used in various applications. Here are some of the
     common types and their applications:`,
+    unique_key: "3",
     text_arr: [
     `1. Solid Rocket Engines:
     ● Description: Solid rocket engines use a solid propellant, which is a mixture of fuel
@@ -1202,6 +1188,7 @@ await pg("lessons_en").insert([
     staging, and payload capacity.Rocket design and optimization involve a multidisciplinary approach that combines engineering,
     physics, and mathematics to create efficient and high-performance rocket systems.`,
     image: `${URL_IMAGES}/das3_2.jpg`,
+    unique_key: "3",
     text2:`Here are some key aspects of rocket design and optimization:`,
     text_arr_margin: [
     `1. Mission Requirements: The first step in designing a rocket is to clearly define the mission
@@ -1262,6 +1249,7 @@ await pg("lessons_en").insert([
     text1: `Explore futuristic concepts in rocket technology, such as reusable rockets and electric
     propulsion systems.`,
     image: `${URL_IMAGES}/das3_3.jpg`,
+    unique_key: "3",
     text2:`The field of rocket technology is continuously evolving, and several future developments are
     expected to shape the future of space exploration and commercial spaceflight. Here are some
     areas of ongoing research and potential advancements in rocket technology:`,
@@ -1324,6 +1312,7 @@ await pg("lessons_en").insert([
     capsules, along with their functions and capabilities.`,
     text2:`Satellites are spacecraft that orbit around celestial bodies like the Earth, providing various
     services such as communication, weather monitoring, navigation, scientific research, and more.`,
+    unique_key: "4",
     text_arr_margin: [
       `1. Satellites:`,
       `Introduce different types of spacecraft, including satellites, space shuttles, and crewed
@@ -1489,6 +1478,7 @@ await pg("lessons_en").insert([
     space and then returning them to Earth. The primary function of space shuttles, such as theretired NASA Space Shuttle program, was to transport astronauts, satellites, and other cargo to
     and from low Earth orbit (LEO). They played a crucial role in the construction of the International
     Space Station (ISS) and were used for scientific experiments, satellite deployment, and repairs.`,
+    unique_key: "4",
     text_arr_margin:[
     `${URL_GIF}/gif4_3.gif`,
     `Space shuttles were a type of spacecraft that were used by NASA, the United States' space
@@ -1538,6 +1528,7 @@ await pg("lessons_en").insert([
     space. These capsules are usually launched atop a rocket and are capable of reentry and
     landing. Examples of crewed capsules include:`,
     image:`${URL_IMAGES}/Eng_img4_4.png`,
+    unique_key: "4",
     text_arr_margin:[`● Soyuz: The Soyuz spacecraft, developed by Russia, has been in service since the 1960s
     and is used to transport crews to and from the ISS.`,
     `● Crew Dragon: Developed by SpaceX for NASA's Commercial Crew Program, Crew
@@ -1559,6 +1550,7 @@ await pg("lessons_en").insert([
     text1: `Explain orbital mechanics and the calculations involved in planning and executing space
     missions, including launch windows, transfer orbits, and rendezvous.`,
     image: `${URL_IMAGES}/Eng_img_orbit.jpg`,
+    unique_key: "4",
     text2:`Orbital mechanics is the branch of aerospace engineering that deals with the motion of objects
     in space under the influence of gravitational forces. Understanding orbital mechanics is crucial
     for planning and executing space missions, including determining launch windows, designing
@@ -1666,6 +1658,7 @@ await pg("lessons_en").insert([
   {
     lesson: `Lesson 4. Spacecraft and Missions`,
     lectures: `Interplanetary missions and space probes`,
+    unique_key: "4",
     text_arr_margin: [
     `Explore notable interplanetary missions and space probes, such as Voyager, Cassini, or
     the recent Perseverance rover on Mars.`,
@@ -1731,6 +1724,7 @@ await pg("lessons_en").insert([
     scientific data and expanding our understanding of Mars. Let's examine the scientific
     instruments carried by Mars rovers, highlight some of their significant discoveries, and explore
     the challenges associated with exploring Mars.`,
+    unique_key: "4",
     text_arr_margin: [
     `Scientific Instruments:`,
     `1. Cameras: Mars rovers are equipped with various types of cameras, including panoramic
@@ -1801,6 +1795,7 @@ await pg("lessons_en").insert([
     // Lesson 1
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:'What was the first artificial satellite launched into space and which country launched it?',
       incorrectAnswer:['The first artificial satellite launched into space was called Starship and it was launched by India.','The first artificial satellite launched into space was called "Cosmic Hermes" and it was launched by the country of Atlantis.','The first artificial satellite launched into space was called Sputnik Apollo and it was launched by America.'],
       correctAnswer:'The first artificial satellite launched into space was called Sputnik 1, and it waslaunched by the Soviet Union.',
@@ -1810,6 +1805,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:'Who was the first person to travel into space and orbit the Earth?',
       incorrectAnswer:['The first person to travel into space and orbit the Earth was Captain Kirk from Star Trek.','The first person to travel into space and orbit the Earth was the famous astronaut Amelia Earhart.','The first person to travel into space and orbit the Earth was female cosmonaut Valentina Tereshkova.'],
       correctAnswer:'The first person to travel into space and orbit the Earth was Soviet cosmonaut Yuri Gagarin.',
@@ -1819,6 +1815,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:'Which mission was the first human landing on the moon, and who were the astronauts involved?',
       incorrectAnswer:['The mission that marked the first human landing on the Moon was Apollo 13. The astronauts involved were Tom Hanks, Kevin Bacon and Bill Paxton.','The mission that marked the first human landing on the Moon was called Moonwalkers United. The astronauts involved were Neil Armstrong, John Lennon, Van der Waals.','The mission that marked the first landing of humans on the Moon was called "Full Moon". The astronauts involved were James Baghyan, Harutyun Kiviryan and Albert Tserents.'],
       correctAnswer:'The mission that marked the first time humans landed on the Moon was Apollo 11. The astronauts involved were Neil Armstrong, Buzz Aldrin and Michael Collins.',
@@ -1827,6 +1824,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:`Which mission was the first human landing on the moon, and who were the astronauts
       involved?`,
       incorrectAnswer:[`The mission that marked the first human landing on the Moon was Apollo 13. The
@@ -1846,6 +1844,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:`How did the space race between the US and the Soviet Union affect technological
       progress on Earth?`,
       incorrectAnswer:[`The space race between the US and the Soviet Union had no effect on
@@ -1864,6 +1863,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:`What was the purpose of the Apollo program and what were its main achievements?`,
       incorrectAnswer:[`The main goal of the Apollo program was to find and collect moon rocks that
       could be used as building materials on Earth.`,
@@ -1878,6 +1878,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:`What was the result of the launch of Sputnik in 1957 and how did it affect international
       relations?`,
       incorrectAnswer:[`The result of Sputnik's launch in 1957 was that it sparked an international frenzy
@@ -1892,6 +1893,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:`What role did the space shuttle program play in space exploration, and what were some
       of its notable missions?`,
       incorrectAnswer:[`The main purpose of the space shuttle program was to supply astronauts with
@@ -1908,6 +1910,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:`What are the current trends in space exploration and how do they contribute to our
       understanding of the universe?`,
       incorrectAnswer:[`Current trends in space exploration include the search for extraterrestrial
@@ -1926,6 +1929,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 1. Introduction to Space Exploration',
+      unique_key: "1",
       question:`What are the future prospects and goals for space exploration, particularly crewed
       missions and colonization?`,
       incorrectAnswer:[`Future prospects for space exploration include hosting the Space Olympics on
@@ -1947,6 +1951,7 @@ await pg("lessons_en").insert([
     {
       
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`Which planet in our solar system has the most moons and how many are there?`,
       incorrectAnswer:[`Saturn has the most moons in our solar system with a total of 82 known moons.`,
       `Uranus has the most moons in our Solar System, with a total of 150 known`,
@@ -1958,6 +1963,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`What is the main feature of Saturn's rings and how are they formed?`,
       incorrectAnswer:[`Saturn's rings are made of solid gold particles deposited by ancient alien
       civilizations.`,
@@ -1973,6 +1979,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`Which planet has the largest volcano in the solar system and what is its name?`,
       incorrectAnswer:[`Venus has the largest volcano in the solar system called Mount Olympus. It is
       also the tallest volcano, reaching a height of about 16 miles (26 kilometers).`,
@@ -1988,6 +1995,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`What is the definition of a dwarf planet, and how many are officially recognized by the
       International Astronomical Union (IAU)?`,
       incorrectAnswer:[`A dwarf planet is a celestial body that orbits the Sun, has an irregular shape, and
@@ -2005,6 +2013,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`What is the difference between an asteroid and a comet?`,
       incorrectAnswer:[`Asteroids are made of frozen gasses, and comets are made of solid rock and
       metal.`,
@@ -2021,6 +2030,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`Which spacecraft visited the dwarf planet Pluto in 2015, and what were the significant
       discoveries made during the mission?`,
       incorrectAnswer:[`The spacecraft that visited Pluto in 2015 was the European Space Agency's
@@ -2039,6 +2049,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`What is an exoplanet and how are they discovered by astronomers?`,
       incorrectAnswer:[`An exoplanet is a planet that orbits a star in our solar system. They are
       discovered by capturing images of distant stars and identifying planets based on
@@ -2054,6 +2065,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`What are the characteristics that make a planet potentially habitable?`,
       incorrectAnswer:[`The main characteristic that makes a planet habitable is its proximity to the star,
       and closer planets are more suitable for life.`,
@@ -2070,6 +2082,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`What is the closest exoplanet to our solar system, and what do we know about its
       possible habitability?`,
       incorrectAnswer:[`The closest exoplanet to our solar system is Proxima Centauri A, which is
@@ -2089,6 +2102,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 2. Our Solar System and Beyond',
+      unique_key: "2",
       question:`Which mission will successfully land a Mars rover named Persistence in 2021 and what
       is its primary goal?`,
       incorrectAnswer:[`The mission that successfully landed a rover named Perseverance on Mars in
@@ -2113,6 +2127,7 @@ await pg("lessons_en").insert([
     // Lesson 3. Rockets and Propulsion Systems
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:`What is Newton's third law of motion and how does it relate to the motion of rockets?`,
       incorrectAnswer:[`Newton's third law of motion states that for every action there is an equal and
       opposite reaction. In the context of rocket propulsion, this means that as the
@@ -2134,6 +2149,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:'What are the two main types of rocket propulsion systems and how do they differ?',
       incorrectAnswer:[`The two main types of rocket propulsion systems are solid rocket engines and
       liquid rocket engines. Solid rocket engines use a single liquid propellant, such as
@@ -2157,6 +2173,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:'What is the fundamental difference between solid rocket engines and liquid rocket engines?',
       incorrectAnswer:[`The fundamental difference between solid rocket engines and liquid rocket
       engines lies in their propellant composition. Solid rocket engines use multiple
@@ -2172,6 +2189,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:'What is the Tsiolkovsky rocket formula and what does it represent?',
       incorrectAnswer:[`The Tchaikovsky formula for rockets is a mathematical equation that describes
       the relationship between the color of a rocket's exterior paint and its propulsion
@@ -2196,6 +2214,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:`What is the significance and applications of Tsiolkovsky's formula in rocketry?`,
       incorrectAnswer:[`Tchaikovsky's formula, also known as Tsiolkovsky's rocket equation, is mainly
       used in the field of classical music composition. It provides a mathematical
@@ -2216,6 +2235,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:`What are the major limitations or challenges associated with rocket propulsion systems?`,
       incorrectAnswer:[`Rocket propulsion systems have no limitations and can carry unlimited payloads
       effortlessly. Rockets can run on any type of fuel and are not limited by specific
@@ -2229,6 +2249,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:'What are the main factors to consider when designing a rocket shape for optimal aerodynamic performance?',
       incorrectAnswer:[`When designing a rocket shape for optimal aerodynamic performance, the main
       factors to consider include the number of fins and how many of them as possible.`,
@@ -2247,6 +2268,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:'How can the center of mass and center of pressure be optimized to ensure stable flight during ascent of a rocket?',
       incorrectAnswer:[`To ensure stable flight, the center of mass (CoM) must be located behind the
       center of pressure (CoP). This arrangement helps the rocket maintain a
@@ -2266,6 +2288,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:'What are the emerging technologies or concepts being explored to improve missile reusability?',
       incorrectAnswer:[`Emerging technologies to improve missile reusability include the use of
       whole-missile parachute recovery systems instead of vertical landing systems.`],
@@ -2279,6 +2302,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 3. Rockets and Propulsion Systems',
+      unique_key: "3",
       question:'How might advances in materials science affect the design and performance of future rockets?',
       incorrectAnswer:[`Advances in materials science could lead to heavier and more durable materials
       for future missiles, which could increase their cost and increase their
@@ -2301,6 +2325,7 @@ await pg("lessons_en").insert([
     
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:`What is the main function of a communication satellite?`,
       incorrectAnswer:[`Communication satellites are primarily designed for weather monitoring and
       forecasting.`,
@@ -2316,6 +2341,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:'How do weather satellites contribute to meteorological studies?',
       incorrectAnswer:[`Weather satellites contribute to forecasting and monitoring by tracking bird
       migration patterns and studying their behavior.`,
@@ -2333,6 +2359,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:'How does gravity maneuvering work and how is it used in interplanetary missions?',
       incorrectAnswer:[`The gravity assist maneuver involves powerful thrusters to propel a spacecraft
       forward and increase its speed.`],
@@ -2345,6 +2372,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:'What is an orbit and how many types of orbits are there?',
       incorrectAnswer:[`An orbit is the path taken by an object as it revolves around another object due to
       gravitational pull. There are 8 main types of orbits: Low Earth Orbit (LEO),
@@ -2370,6 +2398,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:`What factors affect the orbital period of a satellite?`,
       incorrectAnswer:[`Factors affecting a satellite's orbital period are the length of its orbit and the mass
       of the central body it orbits.`,
@@ -2386,6 +2415,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:`How is a Hohmann transfer orbiter used to transfer a spacecraft between two circular orbits?`,
       incorrectAnswer:[`A Hohmann transfer orbit acquires the spacecraft's thrusters in the opposite
       direction of the desired transfer, causing it to slow down and gradually enter the
@@ -2403,6 +2433,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:'What is the first space velocity and its significance in space exploration?',
       incorrectAnswer:[`The first space velocity is the maximum speed at which a spacecraft can travel in
       Earth orbit without entering deep space. It is significant in space exploration
@@ -2423,6 +2454,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:`Which space probe successfully landed on Saturn's moon Titan and what important discoveries did it make?`,
       incorrectAnswer:[`The Voyager probe successfully landed on Saturn's moon Titan and discovered
       methane lakes and rains, various surface features, complex organic molecules
@@ -2441,6 +2473,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:'What are the main objectives of the Voyager spacecraft missions?',
       incorrectAnswer:[`The main goal of the Voyager spacecraft missions was to find ancient life forms
       on one of Saturn's moons.`,
@@ -2456,6 +2489,7 @@ await pg("lessons_en").insert([
     },
     {
       lesson:'Lesson 4. Spacecraft and Missions',
+      unique_key: "4",
       question:'What were the main goals of the Curiosity rover on Mars?',
       incorrectAnswer:[`The main purpose of the Curiosity rover on Mars was to search for alien life
       forms and establish contact.`,

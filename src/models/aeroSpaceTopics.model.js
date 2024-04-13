@@ -9,15 +9,15 @@ const pg = knex(knexConfigs.development);
 class AeroSpaceTopicsModel {
 
 
-    static async gettopics(lesson, lang) {
+    static async gettopics(unique_key, lang) {
       
         try {   
           const result = lang == 'AM'
-          ? await pg('topics').select('*').where('lesson','=',lesson).orderBy('id')
+          ? await pg('topics').select('*').where('unique_key','=',unique_key).orderBy('id')
           : lang == 'US'
-            ? await pg('topics_en').select('*').where('lesson','=',lesson).orderBy('id')
+            ? await pg('topics_en').select('*').where('unique_key','=',unique_key).orderBy('id')
             : lang == 'RU'
-              ? await pg('topics_ru').select('*').where('lesson','=',lesson).orderBy('id')
+              ? await pg('topics_ru').select('*').where('unique_key','=',unique_key).orderBy('id')
               : null;
         
         return result;

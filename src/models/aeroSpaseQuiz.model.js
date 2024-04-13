@@ -4,7 +4,7 @@ import { LoggerUtil } from "../../src/utils";
 const pg = knex(knexConfigs.development);
 
 class aeroSpaseQuiz {
-  static async questions(lesson, lang) {
+  static async questions(unique_key, lang) {
     try {
       let query = null;
 
@@ -12,7 +12,7 @@ class aeroSpaseQuiz {
         case "AM":
           query = pg("questions")
             .select("*")
-            .where("lesson", "=", lesson)
+            .where("unique_key", "=", unique_key)
             // .orderByRaw("random()")
             // .limit(10)
             .orderBy("id")
@@ -22,7 +22,7 @@ class aeroSpaseQuiz {
         case "US":
           query = pg("questions_en")
             .select("*")
-            .where("lesson", "=", lesson)
+            .where("unique_key", "=", unique_key)
             // .orderByRaw("random()")
             // .limit(10)
             .orderBy("id")
@@ -31,7 +31,7 @@ class aeroSpaseQuiz {
         case "RU":
           query = pg("questions_ru")
             .select("*")
-            .where("lesson", "=", lesson)
+            .where("unique_key", "=", unique_key)
             // .orderByRaw("random()")
             // .limit(10)
             .orderBy("id")

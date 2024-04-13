@@ -37,6 +37,7 @@ function up(pg) {
     table.increments('id').primary();
     table.text('lesson');
     table.text('lectures');
+    table.string('unique_key');
     table.text('text1');
     table.text('text2');
     table.text('text3');
@@ -65,6 +66,7 @@ function up(pg) {
     table.string("button");
     table.string('color');
     table.json('lectures');
+    table.string('unique_key');
     table.string('background');
     table.dateTime('created_at');
     table.dateTime('updated_at');
@@ -102,6 +104,7 @@ function up(pg) {
     table.specificType('incorrectAnswer','text[]');
     table.string('lesson');
     table.text('correctAnswer');
+    table.string('unique_key');
     // table.boolean("unverified").defaultTo("false");
     table.string('background');
     table.specificType('button','text[]')

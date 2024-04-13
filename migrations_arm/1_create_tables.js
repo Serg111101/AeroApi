@@ -64,6 +64,7 @@ function up(pg) {
       table.string('lesson');
       table.string('color');
       table.json('lectures');
+      table.string('unique_key');
       table.string('button');
       table.string('background');
       table.dateTime('created_at');
@@ -74,6 +75,7 @@ function up(pg) {
       table.increments('id').primary();
       table.text('lesson');
       table.text('lectures');
+      table.string('unique_key');
       table.text('text1');
       table.text('text2');
       table.text('text3');
@@ -89,6 +91,7 @@ function up(pg) {
     .createTable('questions', (table) => {
       table.increments('id').primary();
       table.text('question');
+      table.string('unique_key');
       table.specificType('incorrectAnswer', 'text[]');
       table.string('lesson');
       table.text('correctAnswer');
