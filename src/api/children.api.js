@@ -74,5 +74,9 @@ ChildrenController.putClass);
 router.get('/getLink/:teacher_id/:school',
 // AuthMiddleware.authenticateFor(['superadmin','admin','children']),
 ChildrenController.getLinks);
+router.get(
+  "/getCubesatLinks/:teacher_id",
+  ChildrenController.getCubesatLinks
+)
 
 export default router;

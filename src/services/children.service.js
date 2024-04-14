@@ -87,5 +87,8 @@ export default class ChildrenServices {
   static async getLinks(teacher_id, school) {
     return ChildrenModel.getLinks(teacher_id, school);
   }
-  
+  // getCubesatLinks
+  static async getCubesatLinks(teacher_id) {
+    return ChildrenModel.getCubesatLinks(teacher_id);
+  }
 }

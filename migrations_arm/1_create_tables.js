@@ -163,7 +163,7 @@ function up(pg) {
       table.string('login');
       table.string('password');
       table.string("school");
-      table.specificType("cubesat_link", 'text[]');
+      table.specificType("links", 'jsonb[]');
       table.dateTime('created_at');
       table.dateTime('updated_at');
     })

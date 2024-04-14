@@ -13,6 +13,19 @@ export default class ChildrenController {
       next(error);
     }
   }
+  // getCubesatLinks
+
+  static async getCubesatLinks(req, res, next) {
+    try {
+      const {teacher_id} = req.params;
+      const data = await ChildrenServices.getCubesatLinks(teacher_id);
+      SuccessHandlerUtil.handleList(res, next, data);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+
   // static async changepass(req, res, next) {
   //   try {
   //     const {role} = req.params;

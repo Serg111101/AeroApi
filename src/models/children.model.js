@@ -45,8 +45,8 @@ class ChildrenModel extends Model {
 
   // Methods
   static async addChildren(info, password) {
-
     const admin = await pg('admin').where('id', '=', info.teacher_id);
+    const ll = admin[0].links
     let payload = {
       fullName:info.fullName,
       bookNumber:info.bookNumber,
@@ -56,11 +56,10 @@ class ChildrenModel extends Model {
       level:info.level,
       classNumber:info.classNumber,
       role:info.role,
-      cubesat_link:admin[0].cubesat_link,
+      links:ll,
       school:admin[0].school,
       password:password
     }
-    
     const x = await ChildrenModel.query().insert({
       ...payload,
       created_at: new Date(), // Add any other necessary fields
@@ -332,6 +331,22 @@ class ChildrenModel extends Model {
       console.log(error);
     }
   }
+  // getCubesatLinks
+  static async getCubesatLinks(teacher_id) {
+    try {
+      const result = await pg('admin')
+        .select('*')
+        .where('id', '=', teacher_id)
+        // .andWhere('school', '=', school);
+
+
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
 }
 
 export default ChildrenModel;
