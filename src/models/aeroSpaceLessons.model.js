@@ -126,17 +126,30 @@ class AeroSpaceLogoModel extends Model {
 
   static async addNewLesson(info, lang) {
     const background = await pg("lessons").select("*");
+
     info.created_at = new Date();
     info.ikonka = `${URL_IMAGES}/propeller.jpg`;
     info.color = "#adcce9";
     info.button = "Հետ";
     info.background = background[0].background
-    let lectures = info.lectures.map(el=>{
+    console.log(info.lectures,"jhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhk");
+    let lectures = info.lectures.map((el,index)=>{
       if(lang === "AM"){
-        return {...el ,text:"It's empty"}
+        if(index===(info.lectures.length-1)){
+          return {...el ,text:"Questions"}
+        }else{
+
+          return {...el ,text:"It's empty"}
+        }
       }
       else{
-        return {...el ,text:"Դատարկ է"}
+        if(index===(info.lectures.length-1)){
+          return {...el ,text:"Հարցաշար"}
+        }else{
+
+          return {...el ,text:"Դատարկ է"}
+        }
+       
       }
     })
     let data = lang === "AM" ? {
@@ -213,31 +226,82 @@ class AeroSpaceLogoModel extends Model {
   // }
 
   static async editExistLesson(unique_key, info, lang) {
-
-
+  
     const langMap = {
       AM: ["lessons","topics","questions"],
       US: ["lessons_en","topics_en","questions_en"]
     };
     
-    const langKey = langMap[lang] || ["lessons_ru","topics_ru","questions_ru"]; 
+
+    const langKey = langMap[lang] || ["lessons_ru","topics_ru","questions_ru"];
 
     for(let i in langKey){
       const updateLessons = await pg(langKey[i]).update({lesson: info[0].lesson}).where('unique_key', '=', unique_key)
 
     }
-    const isLectures = Object.keys(info[0]).includes("lectures","lessons");
+    const isLectures = Object.keys(info[0]).includes("lectures", "lessons");
     const updatedValues = isLectures
       ? JSON.stringify(Object.values(info[0].lectures))
       : undefined;
     info[0].lectures = updatedValues;
 
 
-    return AeroSpaceLogoModel.query()
-      .update(info[0])
-      .where("unique_key", "=", unique_key)
-      .from(langKey[0])
-      .returning("*");
+    const x = await AeroSpaceLogoModel.query()
+    .update(info[0])
+    .where("unique_key", "=", unique_key)
+    .from(langKey[0])
+    .returning("*");
+   
+
+
+    const hyData = await pg("lessons").select("*").where("unique_key", "=", unique_key);
+
+    console.log(info[0], 'sdjkfhsdfgh');
+    const enData = await pg("lessons_en").select("*").where("unique_key", "=", unique_key);
+  
+    let splitedLectures = hyData[0].lectures.slice(0, hyData[0].lectures.length-1);
+    let splitedLecturesEn = enData[0].lectures.slice(0, enData[0].lectures.length-1);
+
+    if(info[0].lectures.length > hyData[0].lectures.length){
+      const s = JSON.parse(info[0].lectures);
+      let a = s.length - hyData[0].lectures.length;
+
+      // console.log(s.length, "djhsgdjhs");
+      // console.log(hyData[0].lectures.length, "skskks");
+      // console.log(a, 'a');
+
+      for (let i = 0; i < a; i++) {
+        console.log(info[0].lectures[(info[0].lectures.length-1)],"fgasdfgsdfg222222222222222");
+        splitedLectures.push({color: s[(s.length - 1 - a + i)].color, text: "Դատարկ է"});
+      }
+      console.log(hyData[0].lectures[hyData[0].lectures.length-1],"hyData[0].lectures[hyData[0].lectures.length-1]");
+      splitedLectures.push(hyData[0].lectures[hyData[0].lectures.length-1]);
+
+      console.log(splitedLectures, "lslsls");
+      
+      const addData = await pg("lessons").update({lectures: JSON.stringify(splitedLectures)}).where("unique_key", "=", unique_key);
+    }
+    if(info[0].lectures.length > enData[0].lectures.length){
+      const s = JSON.parse(info[0].lectures);
+      let a = s.length - enData[0].lectures.length;
+
+      // console.log(s.length, "djhsgdjhs");
+      // console.log(hyData[0].lectures.length, "skskks");
+      // console.log(a, 'a');
+
+      for (let i = 0; i < a; i++) {
+        console.log(info[0].lectures[(info[0].lectures.length-a-1-i)].color,"fgasdfgsdfg222222222222222");
+        splitedLecturesEn.push({color: s[(s.length - 1 - a + i)].color, text: "It's empty"});
+      }
+      console.log(enData[0].lectures[enData[0].lectures.length-1],"hyData[0].lectures[hyData[0].lectures.length-1]");
+      splitedLecturesEn.push(enData[0].lectures[enData[0].lectures.length-1]);
+
+      console.log(splitedLecturesEn, "lslsls");
+      
+      const addData = await pg("lessons_en").update({lectures: JSON.stringify(splitedLecturesEn)}).where("unique_key", "=", unique_key);
+    }
+
+
 
   }
 
@@ -263,7 +327,7 @@ class AeroSpaceLogoModel extends Model {
       const dirnameBackround = delData[0].icon.split("/");
       const delBackround = dirnameBackround[dirnameBackround.length - 1];
 
-      fs.unlink(`images/${delBackround}`, (err) => {
+      fs.unlink(`${delBackround}`, (err) => {
         if (err) {
           console.error("Error deleting upload file:", err);
         } else {

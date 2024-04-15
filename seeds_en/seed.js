@@ -421,13 +421,20 @@ await pg("lessons_en").insert([
     background: `${URL_IMAGES}/giphy.gif`,
     lesson: "Lesson 4. Spacecraft and Missions",
     color: "#adcce9",
-    
     button:"Go back",// lectures:["Տիեզերանավերի տեսակները և դրանց գործառույթները","Ուղեծրային մեխանիկա և հետագծի հաշվարկներ","Միջմոլորակային առաքելություններ և տիեզերական զոնդեր","Առաքելության ուսումնասիրություն. Մարսագնացները և նրանց գիտական բացահայտումները","Հարցաշար"],
     unique_key: "4",
     lectures: JSON.stringify([
       {
         color: "#adcce9",
         text: " Types of spacecraft and their functions",
+      },
+      {
+        color: "#adcce9",
+        text: "Space Shuttles"
+      },
+      {
+        color: "#adcce9",
+        text: "Crewed Capsules"
       },
       {
         color: "#77aad9",
@@ -926,23 +933,23 @@ await pg("lessons_en").insert([
     unique_key: "2",
     image: `${URL_IMAGES}/Eng_img2_2.webp`,
     text_arr:[
-    `● Dwarf Planets:
-    Dwarf planets are similar to planets in terms of their shape and composition, but they are
+    `● Dwarf Planets:`,
+    `Dwarf planets are similar to planets in terms of their shape and composition, but they are
     smaller in size. They are spherical in shape and orbit the Sun directly. The International
     Astronomical Union (IAU) currently recognizes five dwarf planets in our solar system:
     Pluto, Eris, Haumea, Makemake, and Ceres. These objects are located beyond the orbit
     of Neptune in a region called the Kuiper Belt (Pluto, Eris, Haumea, and Makemake) or in
     the asteroid belt between Mars and Jupiter (Ceres).`,
     `${URL_GIF}/gif2_9.gif`,
-    `● Asteroids:
-    Asteroids are rocky and metallic objects that orbit the Sun. They are remnants from the
+    `● Asteroids:`,
+    `Asteroids are rocky and metallic objects that orbit the Sun. They are remnants from the
     early formation of the solar system and are primarily found in the asteroid belt, a region
     located between the orbits of Mars and Jupiter. Asteroids come in various sizes, ranging
     from small rocks to large bodies several hundred kilometers in diameter. The largest
     asteroid in the solar system is Ceres, which is also classified as a dwarf planet.`,
     `${URL_GIF}/gif2_10.gif`,
-    `● Comets:
-    Comets are icy bodies composed of dust, rock, and frozen gasses such as water, carbon
+    `● Comets:`,
+    `Comets are icy bodies composed of dust, rock, and frozen gasses such as water, carbon
     dioxide, methane, and ammonia. They have highly elliptical orbits that can take them
     from the outer reaches of the solar system to closer regions near the Sun. As a comet
     approaches the Sun, the heat causes the ice to vaporize, creating a glowing coma (a
@@ -1122,48 +1129,66 @@ await pg("lessons_en").insert([
     There are several types of rocket engines used in various applications. Here are some of the
     common types and their applications:`,
     unique_key: "3",
-    text_arr: [
-    `1. Solid Rocket Engines:
-    ● Description: Solid rocket engines use a solid propellant, which is a mixture of fuel
-    and oxidizer. The propellant is in a solid state and burns in a controlled manner.
-    ● Applications: Solid rocket engines are commonly used as boosters in space
+    text_arr_margin: [
+    `1. Solid Rocket Engines:`,
+
+    `● Description: Solid rocket engines use a solid propellant, which is a mixture of fuel
+    and oxidizer. The propellant is in a solid state and burns in a controlled manner.`,
+
+    `● Applications: Solid rocket engines are commonly used as boosters in space
     launch vehicles, military missiles, fireworks, and model rockets. They provide
     high thrust and simplicity of design but lack throttle control and reusability.`,
-    `2. Liquid Rocket Engines:
-    ● Description: Liquid rocket engines use liquid propellants, typically liquid fuel and
+
+    `2. Liquid Rocket Engines:`,
+
+    `● Description: Liquid rocket engines use liquid propellants, typically liquid fuel and
     liquid oxidizer. The propellants are stored separately and are combined and
-    ignited in the combustion chamber.
-    ● Applications: Liquid rocket engines are used in various space launch vehicles,
+    ignited in the combustion chamber.`,
+
+    `● Applications: Liquid rocket engines are used in various space launch vehicles,
     such as the SpaceX Falcon 9 and the Atlas V. They offer good thrust control, can
     be throttled or shut down, and are suitable for reusable systems.`,
-    `3. Hybrid Rocket Engines:
-    ● Description: Hybrid rocket engines combine features of both solid and liquid
+
+    `3. Hybrid Rocket Engines:`,
+
+    `● Description: Hybrid rocket engines combine features of both solid and liquid
     rocket engines. They use a solid fuel and a liquid or gaseous oxidizer, typically
-    stored in separate phases.
-    ● Applications: Hybrid rocket engines have potential applications in space tourism,
+    stored in separate phases.`,
+
+    `● Applications: Hybrid rocket engines have potential applications in space tourism,
     small satellite launches, and experimental rocketry. They offer some of the
-    advantages of both solid and liquid systems, such as simplicity and safety.
-    4. Bipropellant Rocket Engines:
-    ● Description: Bipropellant rocket engines use two separate liquid propellants: one
+    advantages of both solid and liquid systems, such as simplicity and safety.`,
+
+    `4. Bipropellant Rocket Engines:`,
+
+    `● Description: Bipropellant rocket engines use two separate liquid propellants: one
     for fuel and one for oxidizer. They are usually fed into the combustion chamber in
-    a controlled manner.
-    ● Applications: Bipropellant engines are widely used in spacecraft propulsion
+    a controlled manner.`,
+
+    `● Applications: Bipropellant engines are widely used in spacecraft propulsion
     systems, including satellite thrusters, space probes, and interplanetary missions.
     They offer good performance and controllability.`,
-    `5. Monopropellant Rocket Engines:
-    ● Description: Monopropellant rocket engines use a single liquid propellant,
+
+    `5. Monopropellant Rocket Engines:`,
+
+    `● Description: Monopropellant rocket engines use a single liquid propellant,
     typically a highly reactive chemical compound, such as hydrazine. The propellant
-    decomposes or reacts with a catalyst to produce thrust.
-    ● Applications: Monopropellant engines are commonly used in attitude control
+    decomposes or reacts with a catalyst to produce thrust.`,
+
+    `● Applications: Monopropellant engines are commonly used in attitude control
     systems for satellites, space probes, and maneuvering thrusters on spacecraft.
     They offer simplicity, compactness, and ease of use.`,
-    `6. Electric Rocket Engines:
-    ● Description: Electric rocket engines, also known as ion thrusters or electric propulsion
+
+    `6. Electric Rocket Engines:`,
+
+    `● Description: Electric rocket engines, also known as ion thrusters or electric propulsion
     systems, use electric fields or electromagnetic forces to accelerate and expel ions or
-    other charged particles.
-    ● Applications: Electric rocket engines are utilized in long-duration space missions, such
+    other charged particles.`,
+
+    `● Applications: Electric rocket engines are utilized in long-duration space missions, such
     as deep space probes and satellite station-keeping. They provide high specific impulse
-    but lower thrust compared to chemical rockets.`],
+    but lower thrust compared to chemical rockets.`
+    ],
     slides: [
       `${URL_SLIDES}/slide_les3_1.jpg`,
       `${URL_SLIDES}/slide_les3_2.jpg`,
@@ -1640,7 +1665,7 @@ await pg("lessons_en").insert([
     communication, weather monitoring and broadcasting.`,
     `● High Elliptical Orbit (HEO). HEOs have very elongated elliptical paths, with the satellite's
     altitude changing significantly during its orbit. These orbits are used for special purposes,
-    to receive communication with polar order.●Sun Synchronous Orbit (SSO). SSO is a subpolar orbit that maintains a fixed angle
+    to receive communication with polar order.`, `● Sun Synchronous Orbit (SSO). SSO is a subpolar orbit that maintains a fixed angle
     between the satellite's orbital plane and the Sun. This orbit is often used by Earth
     observation satellites to image and monitor consistent illumination conditions.`,
     `● Molniya orbit. A Molniya orbit is a type of highly elliptical orbit with a high inclination. It is
@@ -2838,3 +2863,4 @@ async function init() {
 
 
 init();
+
