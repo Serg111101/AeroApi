@@ -32,6 +32,7 @@ function up(pg) {
       table.string('cameraLinks');
       table.string("spaceLinks");
       table.string('image');
+      table.string('name');
       table.dateTime('created_at');
       table.dateTime('updated_at');
     })

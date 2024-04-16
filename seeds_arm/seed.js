@@ -2129,12 +2129,6 @@ await pg('satellite_questions').insert([
       created_at: new Date().toISOString(),
     },
     {
-      name: "Նելլի Փափազյան",
-      image: `${URL_IMAGES}/IMAGE2023-05-30160438.jpg`,
-      text: "Աերոտիեզերական ինժեներ",
-      created_at: new Date().toISOString(),
-    },
-    {
       name: "Կարեն Կարապետյան",
       image: `${URL_IMAGES}/Screenshot2023-06-01at12.45.02.png`,
       text: "Ծրագրային ապահովման ինժեներ",
@@ -2199,7 +2193,7 @@ await pg('satellite_questions').insert([
           կարողություններ՝ կախված օգտագործվող միավորների քանակից:`
   
         ],
-        animationCubeSat1: `${URL_VIDEOS}/Space_Minds_1.mp4`,
+        animationCubeSat1: `${URL_VIDEOS}/arm1.mp4`,
   
         text2: [
           `1U արբանյակները կարող են համալրվել տարբեր ենթահամակարգերով, ինչպիսիք են
@@ -2268,7 +2262,7 @@ await pg('satellite_questions').insert([
           տեխնոլոգիական ցուցադրություններ կամ փորձեր:`
   
         ],
-        animationCubeSat2: `${URL_VIDEOS}/Space_Minds_2.mp4`,
+        animationCubeSat2: `${URL_VIDEOS}/arm2.mp4`,
         text3: [
           `Թռիչքարկում (Launch) դեպի տիեզերք.`,
           `1U փոքր արբանյաները պատրաստ լինելուն պես անցելով բոլոր թեստավորումները պատրաստվում
@@ -2350,7 +2344,7 @@ await pg('satellite_questions').insert([
           տեղեկատվությունը վերակառուցելու համար:`
         ],
   
-        animationCubeSat3: `${URL_VIDEOS}/Space_Minds_3.mp4`,
+        animationCubeSat3: `${URL_VIDEOS}/arm3.mp4`,
   
         text5: [
           `Արբանյակն ուղեծրում.`,
@@ -2362,7 +2356,7 @@ await pg('satellite_questions').insert([
           հաղորդակցության, Երկրի դիտարկման և տիեզերական առաքելությունների համար,
           ինչպիսիք են Միջազգային տիեզերական կայանը (ISS):`
         ],
-        animationCubeSat4: `${URL_VIDEOS}/Space_Minds_4.mp4`,
+        animationCubeSat4: `${URL_VIDEOS}/arm4.mp4`,
   
         margin_text4: [
           `● Առաքելության տևողությունը. 1U արբանյակի առաքելության տևողությունը

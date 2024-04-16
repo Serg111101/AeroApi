@@ -235,12 +235,6 @@ await pg("our_team_en").insert([
     created_at: new Date().toISOString(),
   },
   {
-    name: "Nellie Papazian",
-    image: `${URL_IMAGES}/IMAGE2023-05-30160438.jpg`,
-    text: "Aerospace engineer",
-    created_at: new Date().toISOString(),
-  },
-  {
     name: "Karen Karapetyan",
     image: `${URL_IMAGES}/Screenshot2023-06-01at12.45.02.png`,
     text: "Software engineer",
@@ -2551,7 +2545,7 @@ await pg("lessons_en").insert([
         depending on the number of units used.`
 
       ],
-      animationCubeSat1: `${URL_VIDEOS}/Space_Minds_en_1.mp4`,
+      animationCubeSat1: `${URL_VIDEOS}/eng1.mp4`,
 
       text2: [
         `1U satellites can be equipped with various subsystems such as data processing subsystem,
@@ -2607,7 +2601,7 @@ await pg("lessons_en").insert([
         or experiments.`
 
       ],
-      animationCubeSat2: `${URL_VIDEOS}/Space_Minds_en_2.mp4`,
+      animationCubeSat2: `${URL_VIDEOS}/eng2.mp4`,
       text3: [
         `Launching into space.`,
         `As soon as the 1U small satellites are ready, after passing all the tests,
@@ -2673,7 +2667,7 @@ await pg("lessons_en").insert([
         received and reassembled by ground stations to reconstruct the original information.`
       ],
 
-      animationCubeSat3: `${URL_VIDEOS}/Space_Minds_en_3.mp4`,
+      animationCubeSat3: `${URL_VIDEOS}/eng3.mp4`,
 
       text5: [
         `Satellite in orbit.`,
@@ -2682,7 +2676,7 @@ await pg("lessons_en").insert([
         2,000 kilometers (1200 mile) above Earth. LEO is commonly used for satellite communications,
         Earth observation, and space missions such as the International Space Station (ISS).`
       ],
-      animationCubeSat4: `${URL_VIDEOS}/Space_Minds_en_4.mp4`,
+      animationCubeSat4: `${URL_VIDEOS}/eng4.mp4`,
 
       margin_text4: [
         `● Duration of the mission. The duration of a 1U satellite's mission may vary depending on
