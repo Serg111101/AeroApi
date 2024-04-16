@@ -27,8 +27,8 @@ async function seed(pg) {
       created_at: new Date().toISOString(),
     },
     {
-      title: "Partners",
-      link:"https://www.youtube.com/",
+      title: "Simulations",
+      link:"https://webserver1.github.io/",
       created_at: new Date().toISOString(),
     },
     {
